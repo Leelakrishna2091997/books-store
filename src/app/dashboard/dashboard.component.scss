@@ -13,3 +13,36 @@
     max-width: 10rem !important;
     padding: 0.5rem !important;
   }
+  .flex-row{
+    display: flex;
+    align-items: center;
+  }
+  .dashboard-header {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+  }
+.buttons-sec{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+.flex-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.book-block{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.books-section {
+  display: flex;
+}
+.sign-out {
+  position: absolute;
+  right: 1rem;
+}

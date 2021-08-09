@@ -1,8 +1,36 @@
+@import "src/app/login/login.component.scss";
+
 .books-section {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.w-40 {
-    width: 40%;
+.w-45 {
+    width: 45%;
+}
+.text-header {
+    text-align: center;
+    font-size: 1.2rem;
+}
+.w-90 {
+    width: 90%;
+}
+.book-block {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.mr-4 {
+    margin-right: 4rem;
+}
+.books-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.flex-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

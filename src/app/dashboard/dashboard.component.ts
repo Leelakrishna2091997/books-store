@@ -5,6 +5,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { config } from 'src/config';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { EditBookDialogComponent } from '../edit-book-dialog/edit-book-dialog.component';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,12 +15,19 @@ import { EditBookDialogComponent } from '../edit-book-dialog/edit-book-dialog.co
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private http: HttpClient, private matDialog: MatDialog) { }
+  constructor(private http: HttpClient, private matDialog: MatDialog, private router: Router) { }
   public categorySelect: any;
   public categoriesArray: any = [];
   public dataSource: any;
   public tableheaders: any;
   public tableData: any;
+  public addBookData = new FormGroup({
+    title: new FormControl(),
+    category: new FormControl(),
+    price: new FormControl(),
+    author: new FormControl(),
+    description: new FormControl(),
+  });
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   pageSize: any = 5;
   pageNumber: any = 0;
@@ -94,8 +103,8 @@ export class DashboardComponent implements OnInit {
     };
     const dialogRef = this.matDialog.open(EditBookDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(res => {
-      if (res) {
-        // this.confirmCreation();
+      if (res && res.isEdited) {
+        this.searchBook();
       }
     });
   }
@@ -106,5 +115,31 @@ export class DashboardComponent implements OnInit {
       this.searchBook();
     });
 
+  }
+  addBook() {
+    //   {
+    //     "category": 3,
+    //     "title": "Overwatch",
+    //     "author": "Jeff",
+    //     "price": "2000.000",
+    //     "description": "Interest fund recent consumer enough almost trip least. Across sure raise future price. Easy address decade air power."
+    // }
+    this.http.post(config.serverName + ':' + config.port + '/books/create', {
+      "category": this.addBookData.value.category,
+      "title": this.addBookData.value.title,
+      "author": this.addBookData.value.author,
+      "price": this.addBookData.value.price,
+      "description": this.addBookData.value.description
+    }).subscribe(res => {
+      console.log(res);
+
+    });
+  }
+  resetAddBook() {
+    this.addBookData.reset();
+  }
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigateByUrl('/login');
   }
 }

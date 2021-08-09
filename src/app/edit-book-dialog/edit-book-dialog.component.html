@@ -1,41 +1,47 @@
-<!-- <p>edit-book-dialog works!</p>
-{{data | json}} -->
-<form [formGroup]="bookData">
-    <div class='w-100 books-section'>
-        <div class='mr-3 w-40'>
-            <mat-form-field class='w-100' appearance="fill">
-                <mat-label>Category</mat-label>
-                <input formControlName='category' placeholder="category" matInput disabled='true' />
-            </mat-form-field>
-        </div>
-
-        <div class='mr-3 w-40'>
-            <mat-form-field class='w-100' appearance="fill">
-                <mat-label>Title</mat-label>
-                <input formControlName='title' placeholder="Title" matInput required />
-            </mat-form-field>
-        </div>
-        <div class='mr-3 w-40'>
-            <mat-form-field class='w-100' appearance="fill">
-                <mat-label>Price</mat-label>
-                <input formControlName='price' placeholder="Price" matInput required />
-            </mat-form-field>
-        </div>
-        <div class='mr-3 w-40'>
-            <mat-form-field class='w-100' appearance="fill">
-                <mat-label>Author</mat-label>
-                <input formControlName='author' placeholder="Title" matInput required />
-            </mat-form-field>
-        </div>
-        <div class='mr-3 w-40'>
-            <mat-form-field class='w-100' appearance="fill">
-                <mat-label>Description</mat-label>
-                <input formControlName='description' placeholder="Title" matInput required />
-            </mat-form-field>
-        </div>
-
+<div class='h-100 books-dialog'>
+    <div class='text-header mb-3'>
+        Edit Book
     </div>
-    <div>
-        <button (click)='editBook()'>Edit</button>
+    <form [formGroup]="bookData">
+        <div class='book-block'>
+            <div class='w-90 books-section'>
+                <div class='mr-4 w-45'>
+                    <mat-form-field class='w-100' appearance="fill">
+                        <mat-label>Category</mat-label>
+                        <input formControlName='category' placeholder="category" matInput [disabled]='true' />
+                    </mat-form-field>
+                </div>
+
+                <div class='mr-4 w-45'>
+                    <mat-form-field class='w-100' appearance="fill">
+                        <mat-label>Title</mat-label>
+                        <input formControlName='title' placeholder="Title" matInput required />
+                    </mat-form-field>
+                </div>
+                <div class='mr-4 w-45'>
+                    <mat-form-field class='w-100' appearance="fill">
+                        <mat-label>Price</mat-label>
+                        <input formControlName='price' placeholder="Price" matInput required />
+                    </mat-form-field>
+                </div>
+                <div class='mr-4 w-45'>
+                    <mat-form-field class='w-100' appearance="fill">
+                        <mat-label>Author</mat-label>
+                        <input formControlName='author' placeholder="Title" matInput required />
+                    </mat-form-field>
+                </div>
+                <div class='mr-4 w-45'>
+                    <mat-form-field class='w-100' appearance="fill">
+                        <mat-label>Description</mat-label>
+                        <input formControlName='description' placeholder="Title" matInput required />
+                    </mat-form-field>
+                </div>
+
+            </div>
+        </div>
+    </form>
+    <div class='flex-center'>
+        <button class='primary_btn' (click)='editBook()'>Edit</button>
     </div>
-</form>
+
+</div>

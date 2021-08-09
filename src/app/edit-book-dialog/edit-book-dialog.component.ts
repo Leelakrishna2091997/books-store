@@ -20,6 +20,8 @@ export class EditBookDialogComponent implements OnInit {
     description: new FormControl(this.data.dataObject['description']),
   });
   ngOnInit(): void {
+    this.bookData.get('category').disable();
+
     console.log(this.data);
 
   }
@@ -27,7 +29,14 @@ export class EditBookDialogComponent implements OnInit {
     this.matDialogRef.close({ isClose: true });
   }
   editBook() {
-    this.http.put(config.serverName + ':' + config.port + '/books/' + this.data.displayContent['Book ID'], {}).subscribe(res => {
+    this.http.put(config.serverName + ':' + config.port + '/books/' + this.data.displayContent['Book ID'], {
+      "category": this.bookData.value.category,
+      "title": this.bookData.value.title,
+      "author": this.bookData.value.author,
+      "price": this.bookData.value.price,
+      "description": this.bookData.value.description
+
+    }).subscribe(res => {
       console.log(res);
       //   {
       //     "category": 3,
