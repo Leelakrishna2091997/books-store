@@ -1,0 +1,299 @@
+<div class='w-100 flex-row-center p-3' *ngIf='errorMessage'>
+    <div class='alert-danger p-2 w-75'>
+        {{errorMessage}}
+    </div>
+</div>
+<form [formGroup]="registerForm">
+    <div class="font-larger text-center mt-3 mb-3">
+        User Details
+    </div>
+    <div class='align-center w-100'>
+        <mat-divider class='border-width'></mat-divider>
+    </div>
+    <div formGroupName="personalDetails">
+        <div class='font-large margin-5 mt-3 mb-3'>
+            Personal Details
+        </div>
+        <div class='flex-row space-around w-100'>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>First Name</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>First Name</mat-label>
+                            <input formControlName='firstName' placeholder="First Name" matInput required />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>Last Name</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Last Name</mat-label>
+                            <input formControlName='lastName' placeholder="Last Name" matInput required />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class='flex-row space-around w-100'>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>City</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-select formControlName='city' placeholder='City'>
+                                <mat-option value='mumbai'>Mumbai</mat-option>
+                                <mat-option value='bengaluru'>Bengaluru</mat-option>
+                                <mat-option value='delhi'>Delhi</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>State</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-select formControlName='state' placeholder='State'>
+                                <mat-option value='maharastra'>Maharastra</mat-option>
+                                <mat-option value='karnataka'>Karnataka</mat-option>
+                                <mat-option value='delhi'>Delhi</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class='flex-row space-around w-100'>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>Country</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-select formControlName='country' placeholder="Country">
+                                <mat-option value='india'>India</mat-option>
+                                <mat-option value='china'>China</mat-option>
+                                <mat-option value='canada'>Canada</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>Postal Code</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Postal Code</mat-label>
+                            <input formControlName='postalCode' placeholder="Eg: 517501" matInput required />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class='flex-row space-around w-100'>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>Address Line</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Address Line</mat-label>
+                            <input formControlName='addressLine1' placeholder="Address Line" matInput required />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>Home Phone</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Home Phone</mat-label>
+                            <input formControlName='homePhone' placeholder="Eg: 9876543211" matInput required />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class='flex-row space-around w-100'>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>Phone</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Phone</mat-label>
+                            <input formControlName='phone' placeholder="Eg: 9876543211" matInput required />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>Email Id</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Email Id</mat-label>
+                            <input formControlName='emailId' placeholder="Eg: sample@gmail.com" matInput required />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div formGroupName="loginDetails">
+        <div class='font-large margin-5 mt-3 mb-3'>
+            Login Details
+        </div>
+        <div class='align-center w-100'>
+            <mat-divider class='border-width'></mat-divider>
+        </div>
+
+        <div class='flex-row space-around w-100'>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>User Name</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>User Name</mat-label>
+                            <input formControlName='userName' placeholder="User Name" matInput required />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+            <div class='w-40 flex-around'>
+                <div class='pt-3'>
+                    <button class='primary_btn' (click)='checkAvailability()'>Availability</button>
+                </div>
+                <div class='p-3 alert-success' *ngIf='isCheckAvailable && isUsernameAvailable'>
+                    Valid Username
+                </div>
+                <div class='p-3 alert-danger' *ngIf='isCheckAvailable && !isUsernameAvailable'>
+                    InValid Username
+                </div>
+
+                <!-- <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>Password</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Password</mat-label>
+                            <input formControlName='password' placeholder="password" matInput required />
+                        </mat-form-field>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+        <div class='flex-row space-around w-100'>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>Password</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Password</mat-label>
+                            <input formControlName='password' type='password' matInput required />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>Confirm Password</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Confirm Password</mat-label>
+                            <input formControlName='confirmPassword' type='password' matInput required />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class='flex-row space-around w-100'>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>Hint Question</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-select formControlName='hintQuestion' placeholder="Select Hint Question">
+                                <mat-option [value]='eachHint.id' *ngFor='let eachHint of hintsArray; let i = index'>
+                                    {{eachHint.hint_question}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+            <div class='w-40'>
+                <div class='row-attr w-100 pt-3'>
+                    <div>
+                        <b>Answer</b>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Enter your answer</mat-label>
+                            <input formControlName='answer' placeholder="Answer" matInput required />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class='flex-row-center mt-3 pb-3'>
+        <button (click)='submitRegisterForm()' [disabled]='!registerForm.valid'
+            [ngClass]=" {'disabled': (!registerForm.valid)}" class='primary_btn mr-3'>Submit</button>
+        <button (click)='resetForm()' class='primary_btn ml-3'>Reset</button>
+
+    </div>
+
+</form>

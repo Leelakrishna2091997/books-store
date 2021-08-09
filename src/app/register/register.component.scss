@@ -1,0 +1,55 @@
+.flex-row {
+    display: flex;
+
+}
+
+.row-attr {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-between;
+}
+.w-40 {
+    width: 40%;
+}
+.space-around {
+    justify-content: space-around;
+}
+.font-larger {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.border-width {
+    width: 90%;
+}
+.font-large {
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+.margin-5 {
+    margin-left: 5%;
+}
+.text-center {
+    text-align: center;
+}
+.flex-around {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+.flex-row-center {
+    display: flex;
+    justify-content: center;
+}
+
+.disabled {
+    background-color: #d6d6d6;
+    color: white;
+    border: none !important;
+    outline: none;
+}

@@ -1,0 +1,15 @@
+@import "src/app/login/login.component.scss";
+::ng-deep .mat-cell, .mat-header-cell{
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    max-width: 10rem !important;
+    padding: 0.5rem !important;
+
+  }
+
+  ::ng-deep .mat-cell, .mat-footer-cell{
+    word-break: break-all !important;
+    white-space: unset !important;
+    max-width: 10rem !important;
+    padding: 0.5rem !important;
+  }

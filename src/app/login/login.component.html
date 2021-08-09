@@ -1,0 +1,42 @@
+<div class='w-100 h-100 login-page p-3'>
+    <div class='login-card w-50 p-3'>
+        <div>
+            <b>Login Form</b>
+        </div>
+        <div class='row-attr w-50 pt-3'>
+            <div>
+                <b>Username</b>
+            </div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Username</mat-label>
+                    <input [formControl]='username' matInput value="Hello" required />
+                </mat-form-field>
+                <!-- <div *ngIf="username.valid" class="alert alert-danger">
+            Name cannot match alter ego.
+          </div> -->
+            </div>
+        </div>
+        <div class='row-attr w-50 pt-3'>
+            <div>
+                <b>Password</b>
+            </div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input type="password" [formControl]='password' matInput required />
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div>
+            <button (click)='signIn()' class='primary_btn'
+                [ngClass]=" {'disabled': (!username.valid || !password.valid)}">Sign
+                In</button>
+        </div>
+        <div class='row-attr'>
+            <a (click)='goToRegister()'>New User</a>
+            <a (click)='goToForget()'>Forgot Password</a>
+        </div>
+    </div>
+</div>
